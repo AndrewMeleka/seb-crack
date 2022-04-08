@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Powered By AN</h1>
+    <div class="selections">
+        <div id="examBtn">
+            Exam
+        </div>
+        <a href="https://www.google.com/" target="_blank">
+            Google
+        </a>
+    </div>
+    <script>
+        const btn = document.getElementById("examBtn")
+        const link = new URLSearchParams(window.location.search).get('link')
+        btn.onclick = () => {
+            if(!link) return;
+            window.open(link, '_target')
+        }
+    </script>
+</body>
+</html>
