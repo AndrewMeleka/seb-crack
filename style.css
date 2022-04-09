@@ -49,3 +49,7 @@ h1 {
 .selections > *:not(:last-child) {
     margin-right: 80px;
 }
+
+#title {
+    text-transform: capitalize;
+}

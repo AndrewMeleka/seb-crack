@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <h1 id="title"></h1> <br>
     <h1>Powered By AN</h1>
+
     <div class="selections">
         <div id="examBtn">
             Exam
@@ -17,9 +19,14 @@
             Google
         </a>
     </div>
+
     <script>
+        const titleEl = document.getElementById("title")
         const btn = document.getElementById("examBtn")
-        const link = new URLSearchParams(window.location.search).get('link')
+        const params = new URLSearchParams(window.location.search)
+        const link = params.get("link") || null
+        const title = params.get("title") || null
+        titleEl.innerText = title
         btn.onclick = () => {
             if(!link) return;
             window.open(link, '_target')
